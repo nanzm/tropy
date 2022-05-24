@@ -43,10 +43,7 @@ jobs:
           cache: npm
 
       - name: Install and build dependencies
-        run: npm install --no-progress --no-package-lock
-
-      - name: Print installed dependencies
-        run: npm ls
+        run: npm ci --no-progress
 
       - name: Rebuild native dependencies
         run: node scripts/rebuild --force --arch ${{ matrix.arch }}
