@@ -45,6 +45,9 @@ jobs:
       - name: Install and build dependencies
         run: npm install --no-progress --no-package-lock
 
+      - name: Print installed dependencies
+        run: npm ls
+
       - name: Rebuild native dependencies
         run: node scripts/rebuild --force --arch ${{ matrix.arch }}
 
